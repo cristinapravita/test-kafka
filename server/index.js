@@ -190,16 +190,17 @@ app.post('/send-data', async (req, res) => {
     if(balance) {
       lastBalance = lastBalance + parseInt(balance);
       // res.status(200).json({ message: 'Balance updated', balance: balanceCurrent });
+    }else{
+      lastBalance = lastBalance - 100; 
     }
     // Send the data to Kafka topic case
-    console.log(`newBalance : ${newBalance}`);
+    console.log(`newBalance : ${lastBalance}`);
     console.log(`data : ${data}`);
     if(data) {
-      const newBalance = lastBalance - 100; 
-      await sendToKafka(topic, data, newBalance); // Replace 'testing1' with your Kafka topic
+      await sendToKafka(topic, data, lastBalance); // Replace 'testing1' with your Kafka topic
       res.status(200).json({ message: 'Data received and sent to Kafka successfully' });
     }else if (newBalance > 0) {
-      await sendToKafka(topic, null, newBalance); // Replace 'testing1' with your Kafka topic
+      await sendToKafka(topic, null, lastBalance); // Replace 'testing1' with your Kafka topic
       res
         .status(200)
         .json({ message: "Data received and sent to Kafka successfully" });
