@@ -1,29 +1,275 @@
 <mxfile host="65bd71144e">
     <diagram id="yiUFdmM7ZMQAX9hIOiX3" name="Page-1">
-        <mxGraphModel dx="964" dy="573" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1812" dy="1076" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1500" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="4" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2" target="3">
+                <mxCell id="4" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="3" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="2" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-                    <mxGeometry x="60" y="110" width="20" height="40" as="geometry"/>
+                <mxCell id="2" value="Client" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="165" width="20" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="3" target="5">
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;" parent="1" source="3" target="5" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="Send Message" style="whiteSpace=wrap;html=1;verticalAlign=top;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="10" y="220" width="120" height="30" as="geometry"/>
+                <mxCell id="3" value="User Send Message using 7days-client" style="whiteSpace=wrap;html=1;verticalAlign=top;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="275" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="5" target="7">
+                <mxCell id="8" value="" style="edgeStyle=none;html=1;" parent="1" source="5" target="7" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="Message Received" style="whiteSpace=wrap;html=1;verticalAlign=top;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="170" y="220" width="120" height="30" as="geometry"/>
+                <mxCell id="5" value="Call 7days-server Endpoint" style="whiteSpace=wrap;html=1;verticalAlign=top;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="265" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="Message Received" style="whiteSpace=wrap;html=1;verticalAlign=top;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="340" y="220" width="120" height="30" as="geometry"/>
+                <mxCell id="13" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="7" target="14">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="504.9999999999998" y="222.05357142857156" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="Endpoint Process the Function" style="whiteSpace=wrap;html=1;verticalAlign=top;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="197.5" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="14" target="99">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="225" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="Save message data on&amp;nbsp;&lt;br&gt;Firebase Firestore&lt;br&gt;ex saved with &lt;br&gt;doc ID: ioCoy09" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="165" width="100" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="19" target="21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Request send message to Whatsapp" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1020" y="220" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=none;html=1;" edge="1" parent="1" source="21" target="25">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1220" y="162.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" style="edgeStyle=none;html=1;" edge="1" parent="1" source="21" target="39">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1300" y="247.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="isSuccess ?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="1170" y="207.5" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="25" target="28">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="False" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1180" y="142.5" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" style="edgeStyle=none;html=1;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="28" target="30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="Send error send message to 7days-client" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1290" y="137.5" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" style="edgeStyle=none;html=1;" edge="1" parent="1" source="30" target="33">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1520" y="162.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="Client" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="1450" y="132.5" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="33" target="5">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="340" y="60" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1580" y="80"/>
+                            <mxPoint x="330" y="80"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="Click retry send message" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1520" y="137.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="39" target="40">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="True" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1290" y="227.5" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" style="edgeStyle=none;html=1;" edge="1" parent="1" source="40" target="44">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1580" y="282.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="40" value="whatsapp give a response include the messageId&lt;br&gt;ex: wamid.xxxxxxxxxx" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1400" y="240" width="150" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="&lt;span style=&quot;&quot;&gt;ioCoy09&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1420" y="990" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" style="edgeStyle=none;html=1;" edge="1" parent="1" source="44" target="46">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1350" y="390" as="targetPoint"/>
+                        <mxPoint x="1369.6999999999998" y="350.64999999999986" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="44" value="Save messageId update field messageId on id&amp;nbsp;&lt;span style=&quot;&quot;&gt;ioCoy09&lt;br&gt;and add price field value&lt;br&gt;on Firestore&lt;br&gt;&lt;/span&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="1590" y="227.5" width="140" height="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="Request descrease balance by fixed price on 7days" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1410" y="520" width="220" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="46" target="54">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1270" y="545" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="58" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="54" target="61">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="939.9999999999998" y="539.6511627906975" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="Decrease balance&lt;br&gt;&lt;br&gt;ex pseucode:&lt;br&gt;user has balance IDR 40.000 then the price per message IDR 100 (on 7days)&amp;nbsp;&lt;br&gt;so:&lt;br&gt;&lt;br&gt;40.000 - 100 = 39.900&lt;br&gt;&lt;br&gt;and the returned balance must be IDR 39.900" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1125" y="480" width="250" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="61" target="63">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="produce to data stream/rtdb" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="940" y="530" width="110" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" style="edgeStyle=none;html=1;entryX=1;entryY=0;entryDx=0;entryDy=67.5;entryPerimeter=0;" edge="1" parent="1" source="63" target="65">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" style="edgeStyle=none;html=1;" edge="1" parent="1" source="63" target="71">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="730" y="650" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="63" value="produce to data stream/rtdb" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="790" y="555" width="110" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="&lt;span style=&quot;&quot;&gt;update client balance&amp;nbsp;&lt;br&gt;&lt;/span&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="480" width="80" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" style="edgeStyle=none;html=1;" edge="1" parent="1" target="74">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="620" y="710" as="targetPoint"/>
+                        <mxPoint x="649" y="670" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="71" value="send to 7days-server socket for client currentBalance (after decrease)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="590" y="610" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" style="edgeStyle=none;html=1;" edge="1" parent="1" source="74" target="83">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="socket on 7days-client trigger currentBalance" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="710" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="Finish" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="800" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="102">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="Get Client Balance" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="655" y="211.25" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" style="edgeStyle=none;html=1;" edge="1" parent="1" source="102" target="104">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="102" target="106">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="isEnough?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="785" y="205" width="90" height="52.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" style="edgeStyle=none;html=1;" edge="1" parent="1" source="104" target="19">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1020" y="244.49074074074065" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="104" value="true" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="223.75" width="70" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" style="edgeStyle=none;html=1;" edge="1" parent="1" source="106" target="107">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="false" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="930" y="287.5" width="80" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="107" target="110">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="840" y="382.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="107" value="send response error to 7days-client&lt;br&gt;error message: 'balance is not enough'" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="870" y="352.5" width="210" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="110" target="114">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="770" y="375.97826086956525" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="110" value="Client" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="810" y="340" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="124" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="114" target="116">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="processing" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="352.5" width="135" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="116" target="119">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="produce to data stream/rtdb" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="398.75" width="110" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="119" target="120">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" style="edgeStyle=none;html=1;" edge="1" parent="1" source="119" target="122">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="260" y="518.75" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="119" value="produce to data stream/rtdb" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="423.75" width="110" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" value="&lt;span style=&quot;&quot;&gt;update client balance&amp;nbsp;&lt;br&gt;&lt;/span&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="540" width="80" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" style="edgeStyle=none;html=1;" edge="1" parent="1" target="123" source="122">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="150" y="578.75" as="targetPoint"/>
+                        <mxPoint x="179" y="538.75" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="122" value="send to 7days-server socket for client currentBalance (after decrease)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="580" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="126" style="edgeStyle=none;html=1;entryX=1;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="123" target="127">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="180" y="450" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="123" value="socket on 7days-client trigger currentBalance" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="480" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="128" style="edgeStyle=none;html=1;" edge="1" parent="1" source="127" target="129">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="200" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="127" value="Client" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="372.5" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="130" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="129" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="Click Retry" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="370" width="90" height="43" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
