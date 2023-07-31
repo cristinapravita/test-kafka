@@ -23,10 +23,10 @@ io.on("connection", (socket) => {
 //   logLevel: logLevel.ERROR, // Set logLevel to ERROR to avoid noisy logs
 // });
 
-const brokers = ["localhost:9092", "192.168.10.249:9092"]; // List of Kafka brokers
+const brokers = ["localhost:9092", "localhost:9093", "localhost:9094"]; // List of Kafka brokers
 const clientId = "my-app";
-const groupId = "test-group2";
-const topic = "testing2";
+const groupId = "test-group-kafka1";
+const topic = "testing-kafka1";
 const messageBuffer = [];
 
 let currentBrokerIndex = 0;
@@ -39,7 +39,15 @@ const connectKafka = async () => {
     kafka = new Kafka({
       clientId,
       brokers: [brokers[currentBrokerIndex]],
-      logLevel: logLevel.ERROR,
+      logLevel: logLevel.TRACE,
+      connectionTimeout: 30000, // 30 seconds
+      // allowAutoTopicCreation: false, // Disable auto topic creatio
+      listener: {
+        security: {
+          protocol: 'listener.security.protocol.map',
+          map: 'INTERNAL:PLAINTEXT,EXTERNAL:SSL'
+        },
+      },
     });
     consumer = kafka.consumer({ groupId });
     producer = kafka.producer(); // Move producer connection here
@@ -89,6 +97,11 @@ const switchToNextBroker = async () => {
       brokers[currentBrokerIndex]
     );
     await new Promise((resolve) => setTimeout(resolve, 5000)); // Wait for the retry delay
+    // Close the existing producer connection before switching to the next broker
+    if (producer) {
+      await producer.disconnect();
+      isProducerConnected = false;
+    }
     await reconnectKafka();
   } else {
     console.log("Max retry attempts reached. Unable to connect to Kafka.");
@@ -164,6 +177,8 @@ const sendToKafka = async (topic, message, balance)=> {
       console.log(`producer not connected`);
       await connectKafka(); // Connect the Kafka producer to a broker
     }
+    // Log the broker address before sending the message
+    console.log("Sending message to broker:", brokers[currentBrokerIndex]);
     await producer.send({
       topic,
       messages: [{ value: `${message}, balance: ${balance}` }],
@@ -199,7 +214,7 @@ app.post('/send-data', async (req, res) => {
     if(data) {
       await sendToKafka(topic, data, lastBalance); // Replace 'testing1' with your Kafka topic
       res.status(200).json({ message: 'Data received and sent to Kafka successfully' });
-    }else if (newBalance > 0) {
+    }else if (lastBalance > 0) {
       await sendToKafka(topic, null, lastBalance); // Replace 'testing1' with your Kafka topic
       res
         .status(200)

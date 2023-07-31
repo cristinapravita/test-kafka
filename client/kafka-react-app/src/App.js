@@ -11,7 +11,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
 const App = () => {
-  const { socket, isConnected } = useSocket('https://3de5-36-74-50-232.ngrok-free.app');
+  const { socket, isConnected } = useSocket('localhost:3001');
 
   const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState('');
@@ -33,7 +33,7 @@ const App = () => {
   // Fetch buffered data when the connection is established or reestablished
   const fetchData = () => {
     axios
-      .get('https://3de5-36-74-50-232.ngrok-free.app/get-buffered-data')
+      .get('http://localhost:3001/get-buffered-data')
       .then((response) => {
         const { data, balance } = response.data;
         console.log(`fetch data : ${data}`)
@@ -74,7 +74,7 @@ const App = () => {
       console.error('Input data is empty. Please enter some data.');
       return;
     }
-    const url = 'https://3de5-36-74-50-232.ngrok-free.app/send-data';
+    const url = 'http://localhost:3001/send-data';
     const data = { data: inputValue };
 
     axios
@@ -93,7 +93,7 @@ const App = () => {
       console.error('can\'t top up 0');
       return;
     }
-    const url = 'https://3de5-36-74-50-232.ngrok-free.app/send-data';
+    const url = 'https://localhost:3001/send-data';
     const data = { balance: inputTopup };
 
     axios
